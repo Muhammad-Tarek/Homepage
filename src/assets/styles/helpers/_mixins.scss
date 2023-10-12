@@ -1,0 +1,12 @@
+// Animation
+@mixin KAnimation($animName) {
+  @-webkit-keyframes #{$animName} {
+    @content;
+  }
+  @-moz-keyframes #{$animName} {
+    @content;
+  }
+  @keyframes #{$animName} {
+    @content;
+  }
+}
