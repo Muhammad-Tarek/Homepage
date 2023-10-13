@@ -1,12 +1,6 @@
-// Animation
-@mixin KAnimation($animName) {
-  @-webkit-keyframes #{$animName} {
-    @content;
-  }
-  @-moz-keyframes #{$animName} {
-    @content;
-  }
-  @keyframes #{$animName} {
-    @content;
-  }
+// Transition
+@mixin transition($properties, $duration, $timingFunction) {
+  -webkit-transition: $properties $duration $timingFunction;
+  -o-transition: $properties $duration $timingFunction;
+  transition: $properties $duration $timingFunction;
 }

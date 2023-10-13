@@ -1,0 +1,145 @@
+@import "src/assets/styles/helpers/variables";
+@import "src/assets/styles/helpers/mixins";
+
+.mt-lg-30 {
+  @media (max-width: 991.98px) {
+    margin-top: 30px;
+  }
+}
+
+.mt-md-30 {
+  @media (max-width: 767.98px) {
+    margin-top: 30px;
+  }
+}
+
+.mt-sm-30 {
+  @media (max-width: 575.98px) {
+    margin-top: 30px;
+  }
+}
+
+.footer {
+  padding: 40px 0;
+  background: -o-linear-gradient(130deg, #d5aee4 -35%, rgb(255 255 255) 15%);
+  background: linear-gradient(320deg, #d5aee4 -35%, rgb(255 255 255) 15%);
+}
+
+.company-info {
+  font-size: 14px;
+  line-height: 18px;
+  font-weight: 400;
+  color: $strong-iris;
+  margin-top: 18px;
+  width: 70%;
+}
+
+.list {
+  .title {
+    font-size: 21px;
+    line-height: 25px;
+    font-weight: 700;
+    color: $reversed-grey;
+    margin-bottom: 35px;
+  }
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    li {
+      &:not(:last-child) {
+        margin-bottom: 12px;
+      }
+      a {
+        font-size: 18px;
+        line-height: 22px;
+        font-weight: 500;
+        color: $strong-iris;
+        cursor: pointer;
+        @include transition(all, 0.2s, ease-in-out);
+        &:hover {
+          color: $sharp-grey;
+        }
+      }
+    }
+  }
+}
+
+.social-links {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 25px;
+  margin-bottom: 30px;
+  a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    background-color: #fff;
+    -webkit-box-shadow: 0px 2px 20px #0000001a;
+    box-shadow: 0px 2px 20px #0000001a;
+    border-radius: 50%;
+    cursor: pointer;
+    &:hover {
+      i {
+        color: $sharp-grey;
+      }
+    }
+    i {
+      color: $reversed-grey;
+      @include transition(all, 0.2s, ease-in-out);
+    }
+  }
+}
+
+.download {
+  .title {
+    font-size: 20px;
+    line-height: 24px;
+    font-weight: 500;
+    color: $strong-iris;
+    margin-bottom: 15px;
+  }
+  .links {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 7px;
+    .link {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      background-color: $reversed-grey;
+      padding: 7px 10px;
+      border-radius: 18px;
+      cursor: pointer;
+      i {
+        color: #fff;
+      }
+      .text {
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+        span {
+          font-size: 8px;
+          line-height: 9px;
+          font-weight: 400;
+          color: #fff;
+        }
+      }
+    }
+  }
+}
+
+.footer {
+  .rights {
+    font-size: 14px;
+    line-height: 17px;
+    font-weight: 400;
+    color: $strong-iris;
+    text-align: center;
+    margin-top: 60px;
+  }
+}
