@@ -6,6 +6,22 @@ const routes: Routes = [
   {
     path: '',
     component: LayoutComponent,
+    children: [
+      {
+        path: 'home',
+        loadChildren: () =>
+          import('../Home/home.module').then((m) => m.HomeModule),
+      },
+      {
+        path: '',
+        pathMatch: 'full',
+        redirectTo: '/home',
+      },
+      {
+        path: '**',
+        redirectTo: '/home', // We can create "not found page" and redirect to it
+      },
+    ],
   },
 ];
 
