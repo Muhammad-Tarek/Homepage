@@ -1,0 +1,64 @@
+@import "src/assets/styles/helpers/variables";
+@import "src/assets/styles/helpers/mixins";
+
+.header {
+  padding: 10px 0;
+  background-color: #fff;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+  .nav-items {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px 40px;
+    a {
+      font-size: 18px;
+      line-height: 22px;
+      font-weight: 400;
+      color: $reversed-grey;
+      cursor: pointer;
+      @include transition(all, 0.2s, ease-in-out);
+      &:hover {
+        color: $sharp-grey;
+      }
+    }
+  }
+  .user-profile {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px 40px;
+    button {
+      border: none;
+      outline: none;
+      padding: 0;
+      background-color: transparent;
+      font-size: 18px;
+      line-height: 22px;
+      font-weight: 400;
+      color: $reversed-grey;
+      cursor: pointer;
+      @include transition(all, 0.2s, ease-in-out);
+      &.sign-up {
+        border: 1px solid $reversed-grey;
+        border-radius: 8px;
+        padding: 8px 15px;
+      }
+      &:hover {
+        color: $sharp-grey;
+        border-color: $sharp-grey;
+      }
+      i {
+        font-size: 10px;
+        -webkit-margin-start: 5px;
+        margin-inline-start: 5px;
+      }
+    }
+  }
+}
