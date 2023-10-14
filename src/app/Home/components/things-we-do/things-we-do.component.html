@@ -1,0 +1,70 @@
+<div class="things-we-do-container">
+  <!-- <div class="color-bg"></div> -->
+  <div class="content">
+    <h2 class="title">We Deliver Digital Productivity</h2>
+    <p>
+      We craft technology solutions that digitally bond and transform the
+      productivity of our customers and their citizens, workers, consumers and
+      partners.
+    </p>
+  </div>
+
+  <div class="activities" *ngIf="activities.length">
+    <div class="first-col">
+      <div
+        class="activity"
+        [ngStyle]="{ 'background-image': 'url(' + activities[0]?.imgUrl + ')' }"
+      >
+        <span class="overlay"></span>
+        <span class="title">{{ activities[0]?.title }}</span>
+        <span class="read-more">
+          <i class="fa-solid fa-arrow-right-long"></i>Read more
+        </span>
+      </div>
+    </div>
+    <div class="second-col">
+      <div
+        class="activity"
+        [ngStyle]="{ 'background-image': 'url(' + activities[1]?.imgUrl + ')' }"
+      >
+        <span class="overlay"></span>
+        <span class="title">{{ activities[1]?.title }}</span>
+        <span class="read-more">
+          <i class="fa-solid fa-arrow-right-long"></i>Read more
+        </span>
+      </div>
+      <div
+        class="activity"
+        [ngStyle]="{ 'background-image': 'url(' + activities[2]?.imgUrl + ')' }"
+      >
+        <span class="overlay"></span>
+        <span class="title">{{ activities[2]?.title }}</span>
+        <span class="read-more">
+          <i class="fa-solid fa-arrow-right-long"></i>Read more
+        </span>
+      </div>
+    </div>
+    <div class="third-col">
+      <div
+        class="activity"
+        [ngStyle]="{ 'background-image': 'url(' + activities[3]?.imgUrl + ')' }"
+      >
+        <span class="overlay"></span>
+        <span class="title">{{ activities[3]?.title }}</span>
+        <span class="read-more">
+          <i class="fa-solid fa-arrow-right-long"></i>Read more
+        </span>
+      </div>
+      <div
+        class="activity"
+        [ngStyle]="{ 'background-image': 'url(' + activities[4]?.imgUrl + ')' }"
+      >
+        <span class="overlay"></span>
+        <span class="title">{{ activities[4]?.title }}</span>
+        <span class="read-more">
+          <i class="fa-solid fa-arrow-right-long"></i>Read more
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
