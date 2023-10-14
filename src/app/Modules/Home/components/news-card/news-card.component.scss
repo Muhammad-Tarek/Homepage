@@ -1,0 +1,134 @@
+@import "src/assets/styles/helpers/variables";
+@import "src/assets/styles/helpers/mixins";
+
+$card-border-radius: 24px;
+$image-wrapper-height: 300px;
+
+.card-container {
+  height: 100%;
+  width: 100%;
+  background-color: #fff;
+  border-radius: $card-border-radius;
+  -webkit-box-shadow: 0px 15px 25px rgba(0, 0, 0, 0.1019607843);
+  box-shadow: 0px 15px 25px rgba(0, 0, 0, 0.1019607843);
+
+  .img-wrapper {
+    width: 100%;
+    height: $image-wrapper-height;
+    border-top-left-radius: $card-border-radius;
+    border-top-right-radius: $card-border-radius;
+    overflow: hidden;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  .content {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 25px 15px 35px;
+    height: calc(100% - $image-wrapper-height);
+
+    .title {
+      flex-grow: 1;
+      font-size: 18px;
+      font-weight: 500;
+      line-height: 22px;
+      color: $strong-iris;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      cursor: pointer;
+      @include transition(all, 0.2s, ease-in-out);
+      &:hover {
+        color: $sharp-grey;
+      }
+    }
+
+    .publish-date {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      i {
+        font-size: 21px;
+        color: $spiro-disco-ball;
+      }
+      span {
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 25px;
+        color: $dugong;
+      }
+    }
+
+    .card-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 10px;
+      .category {
+        width: 110px;
+        height: 22px;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 25px;
+        background-color: $aria;
+        color: $orient;
+        border-radius: 10px;
+        text-align: center;
+      }
+      .actions {
+        display: flex;
+        align-items: center;
+        justify-content: end;
+        gap: 12px;
+        i {
+          font-size: 16px;
+          color: $spiro-disco-ball;
+          cursor: pointer;
+        }
+        .share {
+          position: relative;
+          .menu {
+            display: flex;
+            align-items: center;
+            position: absolute;
+            right: 0;
+            top: 100%;
+            .icon {
+              display: inline-flex;
+              justify-content: center;
+              align-items: center;
+              width: 60px;
+              height: 40px;
+              cursor: pointer;
+              &.facebook {
+                background-color: #3b5998;
+                border-top-left-radius: 6px;
+                border-bottom-left-radius: 6px;
+              }
+              &.twitter {
+                background-color: #13beff;
+              }
+              &.mail {
+                background-color: #ff6666;
+                border-top-right-radius: 6px;
+                border-bottom-right-radius: 6px;
+              }
+              i {
+                font-size: 22px;
+                color: #fff;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

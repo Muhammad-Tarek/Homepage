@@ -1,1 +1,39 @@
-<p>news works!</p>
+<div class="container">
+  <div class="news">
+    <h4 class="sub-title">Media</h4>
+
+    <h2 class="title">Top News</h2>
+
+    <div class="news-filters">
+      <button
+        *ngFor="let category of newsCategories; trackBy: trackByCategory"
+        [ngClass]="{ active: category.isActive }"
+        (click)="filterByCategory(category)"
+      >
+        {{ category.name }}
+      </button>
+    </div>
+
+    <div class="news-list">
+      <div *ngIf="newsToShow.length" class="row">
+        <ng-container *ngFor="let item of newsToShow; trackBy: trackByNews">
+          <div class="col-lg-4 col-md-6">
+            <div class="news-card mb-45">
+              <app-news-card [item]="item"></app-news-card>
+            </div>
+          </div>
+        </ng-container>
+      </div>
+
+      <p *ngIf="!newsToShow.length" class="empty-state">
+        There are no news under this category.
+      </p>
+    </div>
+
+    <div *ngIf="filteredNews.length > newsToShow.length" class="text-center">
+      <button (click)="viewAllNews()" class="view-all-btn">
+        View All News
+      </button>
+    </div>
+  </div>
+</div>

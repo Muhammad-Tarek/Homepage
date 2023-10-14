@@ -1,1 +1,47 @@
-<p>news-card works!</p>
+<div class="card-container">
+  <div class="img-wrapper">
+    <img
+      [src]="item.urlToImage"
+      alt=""
+      onerror="this.src='./assets/images/news-placeholder.png';"
+    />
+  </div>
+
+  <div class="content">
+    <a class="title">
+      {{ item.title }}
+    </a>
+
+    <div class="publish-date">
+      <i class="fa-regular fa-calendar-days"></i>
+      <span class="date">{{ item.publishedDate | date : "EEE d MMM y" }}</span>
+    </div>
+
+    <div class="card-footer">
+      <span class="category">{{ item.category }}</span>
+      <div class="actions">
+        <span class="heart" (click)="toggleAddToFavoriteList(item)">
+          <i
+            class="fa-heart"
+            [ngClass]="{
+              'fa-solid': item.isFavorite,
+              'fa-regular': !item.isFavorite
+            }"
+          ></i>
+        </span>
+        <div class="share">
+          <i class="fa-solid fa-share-nodes" (click)="toggleShare()"></i>
+          <div class="menu" *ngIf="isShare">
+            <span class="icon facebook">
+              <i class="fa-brands fa-facebook-f"></i>
+            </span>
+            <span class="icon twitter">
+              <i class="fa-brands fa-twitter"></i>
+            </span>
+            <span class="icon mail"><i class="fa-solid fa-envelope"></i></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
