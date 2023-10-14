@@ -19,7 +19,6 @@ export class ThingsWeDoComponent implements OnInit {
   getActivities() {
     this.thingsWeDoService.getActivities().subscribe((res) => {
       this.activities = res[0]['activities'];
-      console.log(res[0]['activities']);
     });
   }
 }
