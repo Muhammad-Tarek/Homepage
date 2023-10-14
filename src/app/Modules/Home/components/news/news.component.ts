@@ -36,6 +36,14 @@ export class NewsComponent implements OnInit {
           this.allNews.push(item);
         }
       });
+
+      // display the news items according to their publish date (newest to oldest)
+      this.allNews.sort((a: INewsItem, b: INewsItem): any => {
+        const dateA = new Date(a.publishedDate).getTime();
+        const dateB = new Date(b.publishedDate).getTime();
+        return dateB - dateA;
+      });
+
       this.filteredNews = [...this.allNews];
       this.newsToShow = [...this.filteredNews].slice(
         0,
