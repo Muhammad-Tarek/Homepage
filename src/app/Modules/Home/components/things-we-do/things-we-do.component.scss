@@ -48,6 +48,9 @@
   margin-left: auto;
   padding: 60px 70px 90px 25%;
   background-color: $cga-pink;
+  @media (max-width: 575.98px) {
+    padding: 60px 10px 60px 10%;
+  }
   .title {
     font-size: 55px;
     line-height: 70px;
@@ -55,6 +58,10 @@
     color: $mazarine-blue;
     margin-bottom: 50px;
     z-index: 3;
+    @media (max-width: 575.98px) {
+      font-size: 40px;
+      line-height: 50px;
+    }
   }
   p {
     font-size: 28px;
@@ -62,6 +69,10 @@
     font-weight: 300;
     color: #fff;
     z-index: 3;
+    @media (max-width: 575.98px) {
+      font-size: 20px;
+      line-height: 25px;
+    }
   }
   @media (max-width: 767.98px) {
     width: 90%;
@@ -78,6 +89,11 @@
   }
   .second-col {
     margin-top: 125px;
+  }
+  .third-col {
+    @media (min-width: 519px) and (max-width: 769.33px) {
+      margin-top: -250px;
+    }
   }
   .activity {
     position: relative;
@@ -122,6 +138,9 @@
       font-weight: 900;
       color: #fff;
       z-index: 2;
+      @media (max-width: 575.98px) {
+        font-size: 20px;
+      }
     }
     .read-more {
       opacity: 0;

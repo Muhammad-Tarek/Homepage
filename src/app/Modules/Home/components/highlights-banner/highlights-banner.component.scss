@@ -49,8 +49,9 @@
       -webkit-animation: shapeRotate 5s linear 0s infinite forwards;
       animation: shapeRotate 5s linear 0s infinite forwards;
       @media (max-width: 575.98px) {
-        left: -350px;
-        bottom: -400px;
+        left: -300px;
+        bottom: -350px;
+        width: 1000px;
       }
     }
   }
