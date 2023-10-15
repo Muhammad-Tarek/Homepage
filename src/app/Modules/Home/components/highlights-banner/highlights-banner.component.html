@@ -1,0 +1,56 @@
+<div class="container">
+  <div class="banner-container">
+    <div class="shape">
+      <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+        <path
+          [ngStyle]="{ fill: '#' + currentBannerColorCode }"
+          d="M26,-38.9C38.7,-32.4,57.3,-33.5,67.1,-26.5C76.8,-19.4,77.5,-4.1,72.4,8.2C67.2,20.5,56.2,29.8,46.1,38C36,46.1,26.8,53.2,15.8,58.8C4.7,64.3,-8.2,68.3,-19.6,65.5C-31,62.8,-40.9,53.4,-50,43.1C-59.2,32.9,-67.7,21.9,-65,12C-62.2,2.1,-48.4,-6.8,-41.2,-17.3C-34,-27.7,-33.6,-39.6,-27.8,-49.3C-22.1,-59,-11,-66.4,-2.2,-63C6.7,-59.6,13.4,-45.4,26,-38.9Z"
+          transform="translate(100 100)"
+        />
+      </svg>
+    </div>
+
+    <div class="row">
+      <div class="col-md-6">
+        <ng-container *ngFor="let banner of banners; trackBy: trackByBanner">
+          <ng-container *ngIf="banner.id === currentBanner">
+            <div class="content-wrapper">
+              <h4
+                class="category"
+                [ngStyle]="{ color: '#' + banner.colorCode }"
+              >
+                {{ banner.category }}
+              </h4>
+              <h1 class="title">{{ banner.title }}</h1>
+              <p class="brief">
+                {{ banner.brief }}
+              </p>
+              <div class="buttons">
+                <a class="find-out" target="_blank">Find out more</a>
+                <button class="play-demo">
+                  <i class="fa-solid fa-circle-play"></i>
+                  Play Demo
+                </button>
+              </div>
+            </div>
+          </ng-container>
+        </ng-container>
+
+        <div class="dots">
+          <span
+            *ngFor="let banner of banners; trackBy: trackByBanner"
+            class="dot"
+            [ngStyle]="{ 'background-color': '#' + banner.colorCode }"
+            [ngClass]="{ active: banner.id === currentBanner }"
+            (click)="navigate(banner)"
+          ></span>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="img-wrapper">
+          <img *ngIf="currentBannerImgUrl" [src]="currentBannerImgUrl" alt="" />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
